@@ -1,16 +1,46 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
+/* Принудительная светлая тема */
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --accent-color: #ff8dcb;
+  --text-color: #353430;
+  --title-color: #ffc2e6;
+  --bg-color: #fff1f7;
+  --title-decor-text: #353430;
+  --decor-color: #353430;
+  --decor-color-hover: rgba(53, 52, 48, 0.4);
+  --bg-image: url('../images/cover-image-light.png');
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+/* Скрываем REC в принудительной светлой теме */
+.theme-light .rec {
+  display: none;
+}
+
+/* Системная светлая тема */
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-color: #ff8dcb;
+    --text-color: #353430;
+    --title-color: #ffc2e6;
+    --bg-color: #fff1f7;
+    --title-decor-text: #353430;
+    --decor-color: #353430;
+    --decor-color-hover: rgba(53, 52, 48, 0.4);
+    --bg-image: url('../images/cover-image-light.png');
+  }
+
+  /* Скрываем REC в системной светлой теме */
+  .rec {
+    display: none;
+  }
+}
+
+/* В светлой теме заголовки секций цвета #353430 */
+.theme-light .section__title {
+  color: #353430;
+}
+
+@media (prefers-color-scheme: light) {
+  .section__title {
+    color: #353430;
+  }
 }
